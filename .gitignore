@@ -1,0 +1,70 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# openPRD working files (NOT the Skill itself)
+.openprd/audit/
+.openprd/working/
+.openprd/state.json
+.openprd/execution-log.md
+
+# Test
+coverage/
+.nyc_output/
+
+# IDE specific
+.idea/
+.vscode/
+*.iml
+.idea/modules.xml
+.idea/libraries
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+.DS_Store
+
+# OS
+ehthumbs.db
+[Tt]humbs.db
+
+# Editor
+.vscode/
+.idea/

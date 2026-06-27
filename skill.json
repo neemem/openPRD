@@ -1,0 +1,121 @@
+{
+  "name": "openPRD",
+  "version": "5.0.0",
+  "description": "需求到交付的完整开发文档生成器。35题用户调研 + 5路并行行业研究 + 39份产品文档,4级质量门控。",
+  "author": {
+    "name": "neemem",
+    "email": "neemem@gmail.com",
+    "wechat": "neeeeeemem"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/openPRD-team/openPRD-skill",
+  "keywords": [
+    "product",
+    "requirements",
+    "documentation",
+    "prd",
+    "agile",
+    "spec",
+    "openPRD"
+  ],
+  "platforms": {
+    "claude-code-cli": {
+      "name": "Claude Code CLI",
+      "install_path": "~/.claude/skills/openPRD/",
+      "install_method": "copy_directory",
+      "frontmatter_required": false,
+      "subdirs_supported": true,
+      "subagent_supported": true,
+      "full_support": true,
+      "install_command": "cp -r openPRD/ ~/.claude/skills/"
+    },
+    "opencode": {
+      "name": "OpenCode",
+      "install_path": "~/.config/opencode/skills/openPRD/",
+      "install_method": "copy_directory",
+      "frontmatter_required": true,
+      "subdirs_supported": "partial",
+      "subagent_supported": "partial",
+      "full_support": "degraded",
+      "install_command": "cp -r openPRD/ ~/.config/opencode/skills/",
+      "notes": "子 Agent 能力降级,自动转主 Agent 串行;如需完整支持,请使用 distribute.sh 生成单文件适配版"
+    },
+    "codex-cli": {
+      "name": "Codex CLI",
+      "install_path": "~/.codex/prompts/openPRD.md",
+      "install_method": "single_file",
+      "frontmatter_required": true,
+      "subdirs_supported": false,
+      "subagent_supported": false,
+      "full_support": "degraded",
+      "install_command": "cp openPRD.md ~/.codex/prompts/",
+      "notes": "单文件模式,无子目录;无子 Agent 支持;参考 distribute.sh 生成单文件版"
+    }
+  },
+  "triggers": [
+    "openPRD",
+    "完整 PRD",
+    "从需求到交付",
+    "产品需求文档",
+    "/openPRD"
+  ],
+  "requirements": {
+    "primary": "Claude Code CLI ≥ 1.0",
+    "secondary": ["OpenCode", "Codex CLI"],
+    "node": "≥ 20.0",
+    "tools": ["Read", "Write", "Bash", "Agent (subagent)"]
+  },
+  "installation": {
+    "methods": [
+      {
+        "name": "URL 安装(推荐,未来支持)",
+        "command": "npx skills add https://github.com/openPRD-team/openPRD-skill",
+        "platform": "all"
+      },
+      {
+        "name": "本地 zip 包(当前)",
+        "command": "unzip openPRD-v5.0-skill.zip && cp -r openPRD/ ~/.claude/skills/",
+        "platform": "claude-code-cli"
+      },
+      {
+        "name": "Git 仓库",
+        "command": "git clone https://github.com/openPRD-team/openPRD-skill.git && cp -r openPRD-skill/ ~/.claude/skills/openPRD/",
+        "platform": "all"
+      }
+    ]
+  },
+  "output": {
+    "format": "39+ Markdown documents",
+    "total_size": "≈ 1.8 MB",
+    "structure": [
+      "00-汇总报告.md(项目入口)",
+      "06-产品需求文档.md(核心 PRD,16章)",
+      "12-数据库设计.md",
+      "13-架构设计.md",
+      "15-法律-*.md(4份法律协议)"
+    ]
+  },
+  "dependencies": {
+    "external": [
+      "Read / Write / Bash 工具",
+      "可选用:Agent (subagent) 工具"
+    ],
+    "internal": [
+      "无需外部依赖",
+      "无需网络调用(除非使用 LLM API)"
+    ]
+  },
+  "tags": [
+    "product-management",
+    "documentation",
+    "specification",
+    "requirements-engineering",
+    "open-source"
+  ],
+  "changelog": "CHANGELOG/v5.0-best-practices.md",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/openPRD-team/openPRD-skill/issues",
+    "discussions": "https://github.com/openPRD-team/openPRD-skill/discussions"
+  }
+}
